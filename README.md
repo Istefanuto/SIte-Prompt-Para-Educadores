@@ -18,7 +18,7 @@ Na implementação foram utilizadas **4 ferramentas de IA** selecionadas com bas
 1. **ChatGPT** - OpenAI
 2. **Perplexity** - Perplexity AI
 3. **Gemini** - Google
-4. **Claude** - Antropic
+4. **Claude** - Anthropic
 
 ## 📚 Disciplinas de Teste
 
