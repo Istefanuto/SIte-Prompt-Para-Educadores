@@ -1,0 +1,307 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+    background: #FFFFFF;
+    overflow: hidden;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header fixo */
+.header {
+    position: absolute;
+    top: 1.25rem;
+    right: 1rem;
+    z-index: 10;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 1.875rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #2E4B91;
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+.nav-links a:hover {
+    color: #1a2d5f;
+}
+
+/* Layout principal: lado esquerdo (imagem) + direito (shapes + texto) */
+.main-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    gap: 2rem;
+    padding-top: 5rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* Imagem professoras - Conforme especificações do Figma */
+.professoras-imagem {
+    pointer-events: none;
+    background-image: url('professorasTela2.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    
+    position: absolute;   /* controla posição manualmente */
+    left: 0;              /* cola na esquerda da tela */
+    bottom: 0;            /* opcional: cola no fundo, senão pode usar top: 0 */
+    
+    width: 71.8125rem;    /* Exato do Figma */
+    height: 90.8125rem;   /* Exato do Figma */
+    aspect-ratio: 1/1;
+
+    max-width: 45vw;      /* Responsivo */
+    max-height: 45vw;     /* Responsivo */
+
+    flex-shrink: 0;
+    filter: drop-shadow(0.5rem 0.5rem 0rem rgba(0, 0, 0, 0.6));
+
+    transform: none;      /* remove o translateX(9rem) que empurrava pra direita */
+    z-index: 5;
+}
+
+
+/* Container da direita - Para empilhar shapes e conteúdo */
+.content-direita {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    margin-left: auto;
+}
+
+.bg-shape-2 { 
+    position: absolute; 
+    width: 60rem;
+    height: 16rem;      
+    left: 50%;
+    transform: translateX(-50%) translateY(-4rem); /* movido 4rem para cima */
+    background: #D9EFF7; 
+    border-radius: 2rem; 
+    z-index: 1; 
+    filter: drop-shadow(0.5rem 0.5rem 1rem rgba(0, 0, 0, 0.20)); 
+} 
+ 
+.bg-shape-1 { 
+    position: absolute; 
+    width: 56rem;
+    height: 14rem; 
+    left: 50%;          
+    transform: translateX(-50%) translateY(-4rem); /* movido 4rem para cima */
+    border-radius: 2rem; 
+    background: #FDF0DD; 
+    z-index: 2; 
+    filter: drop-shadow(0.5rem 0.5rem 1rem rgba(0, 0, 0, 0.20)); 
+} 
+ 
+.subtitle { 
+    display: flex; 
+    width: 52rem;
+    padding: 1.5rem 2rem;  
+    margin: 0 auto; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center;
+    color: #000; 
+    text-align: center; 
+    font-family: 'Poppins', sans-serif; 
+    font-size: 1.0rem; 
+    line-height: 2rem; 
+    position: relative;     
+    z-index: 3; 
+    transform: translateY(-1.5rem); /* 2.5rem - 4rem = -1.5rem */
+} 
+ 
+.cta-button { 
+    font-family: 'Poppins', sans-serif; 
+    display: inline-block; 
+    background: #2E4B91; 
+    color: #FDF0DD; 
+    padding: 0.875rem 2.5rem; 
+    border-radius: 0.5rem; 
+    text-decoration: none; 
+    font-weight: 600; 
+    font-size: 1rem; 
+    transition: all 0.3s ease; 
+    position: relative; 
+    z-index: 3; 
+    margin-top: 1rem; 
+    transform: translateY(1.5rem); /* 2.5rem - 4rem = -1.5rem */
+}
+
+.cta-button:hover {
+    background: #3c5aa6;
+    transform: translateY(1.5 rem);
+    box-shadow: 0 4px 12px rgba(46, 75, 145, 0.3);
+}
+
+/* Ocultar título se existir */
+.content-box h1, h1 {
+    display: none;
+}
+
+/* Fonte customizada */
+@font-face {
+    font-family: 'New York';
+    src: url('fontes/NewYork\ PERSONAL\ USE.otf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@media (min-width: 1600px) {
+    .main-content {
+        max-width: 1600px;
+        gap: 3rem;
+    }
+
+    .professoras-imagem {
+        max-width: 40vw;
+        max-height: 40vw;
+    }
+
+    .bg-shape-1 {
+        width: 65rem;
+        height: 16rem;
+    }
+
+    .bg-shape-2 {
+        width: 70rem;
+        height: 18rem;
+    }
+
+    .subtitle {
+        width: 60rem;
+        font-size: 1.0rem;
+        line-height: 2.2rem;
+    }
+
+    .cta-button {
+        font-size: 1.1rem;
+        padding: 1rem 3rem;
+    }
+}
+
+@media (min-width: 1025px) and (max-width: 1599px) {
+    .main-content {
+        max-width: 1400px;
+        gap: 2rem;
+    }
+
+    .professoras-imagem {
+        max-width: 45vw;
+        max-height: 45vw;
+    }
+
+    .subtitle {
+        width: 52rem;
+        font-size: 1.0rem;
+        line-height: 2rem;
+    }
+
+    .cta-button {
+        font-size: 1rem;
+        padding: 0.875rem 2.5rem;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 1024px) {
+    .main-content {
+        flex-direction: column;
+        padding-top: 3rem;
+        gap: 1.5rem;
+    }
+
+    .professoras-imagem {
+        position: static;
+        width: 100%;
+        height: auto;
+        max-width: 80vw;
+        max-height: 60vh;
+        margin-bottom: 2rem;
+    }
+
+    .subtitle {
+        width: 85%;
+        font-size: 1.0rem;
+        line-height: 1.8rem;
+    }
+
+    .cta-button {
+        font-size: 1rem;
+        padding: 0.875rem 2.5rem;
+    }
+
+    .bg-shape-1,
+    .bg-shape-2 {
+        width: 85%;
+        height: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-content {
+        flex-direction: column;
+        padding-top: 2rem;
+        gap: 1rem;
+    }
+
+    .professoras-imagem {
+        position: static;
+        width: 100%;
+        height: auto;
+        max-width: 90vw;
+        max-height: 50vh;
+        margin-bottom: 1rem;
+    }
+
+    .subtitle {
+        width: 90%;
+        font-size: 1rem;
+        line-height: 1.5rem;
+        padding: 1rem;
+    }
+
+    .cta-button {
+        font-size: 0.9rem;
+        padding: 0.75rem 2rem;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 0.75rem;
+        align-items: flex-end;
+    }
+
+    .bg-shape-1,
+    .bg-shape-2 {
+        width: 90%;
+        height: auto;
+        transform: translateX(-50%) translateY(-2rem);
+    }
+}

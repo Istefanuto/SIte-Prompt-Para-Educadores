@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Criando um prompt</title>
+  <link rel="stylesheet" href="stylesTela5.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="efeitoFundoEsquerda-imagem"></div>
+  <div class="efeitoFundoDireita-imagem"></div>
+  <div class="decoracaoRoboProfessora-imagem"></div>
+
+  <div class="container">
+    <header class="header">
+      <nav class="nav-menu">
+        <ul class="nav-links">
+          <li><a href="../TelaInicial/index.html" id="Pagina Inicial">Página Inicial</a></li>
+          <li><a href="../TelaResumoPrompt/resumoPrompt.html" id="criacao">Visão Geral</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="main-content">
+      <div class="content-center">
+        <h1 class="title">Insira suas informações:</h1>
+      </div>
+    </div>
+
+    <div class="retangulo">
+      <div class="gif-decorativo"></div>
+      <form class="formulario-instrucoes" id="formPrompt">
+        <div class="form-section">
+          <h3>DEFINA O CENÁRIO</h3>
+          <textarea name="cenario" placeholder="Apresente-se brevemente, informando seu nome, curso, instituição e disciplina que leciona. Indique também para qual turma ou período a disciplina é destinada."></textarea>
+        </div>
+
+        <div class="form-section">
+          <h3>SEJA ESPECÍFICO</h3>
+          <textarea name="especificidade" placeholder="Descreva de forma clara o que o conteúdo deve abordar, destacando os principais tópicos, conceitos ou competências que deseja trabalhar. Você também pode indicar o que não deve ser aprofundado, para manter o foco no objetivo."></textarea>
+        </div>
+
+        <div class="form-section">
+          <h3>SIMPLIFIQUE</h3>
+          <textarea name="simplificacao" placeholder="Explique a estrutura como gostaria que o material fosse organizado, indicando a ordem e os elementos que não podem faltar. Isso ajuda a garantir clareza e consistência na elaboração."></textarea>
+        </div>
+
+        <div class="form-section">
+          <h3>ESTRUTURE A SAÍDA</h3>
+          <textarea name="estrutura" placeholder="Descreva claramente para quem o material é destinado, mencionando o nível de conhecimento prévio ou experiências que o público-alvo já possui. Isso ajuda a ajustar a complexidade e o enfoque do conteúdo."></textarea>
+        </div>
+
+        <button type="submit">Enviar informações</button>
+      </form>
+    </div>
+<script src="scriptTela5.js"> </script>
+  </div>

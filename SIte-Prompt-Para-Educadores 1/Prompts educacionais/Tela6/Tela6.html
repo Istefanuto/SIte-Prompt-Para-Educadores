@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prompt Gerado</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="efeitoFundoEsquerda-imagem"> 
+    </div>
+    <div class="efeitoFundoDireita-imagem"> 
+    </div>
+
+    <div class="container">
+        <header class="header">
+            <nav class="nav-menu">
+                <ul class="nav-links">
+                    <li><a href="../TelaInicial/index.html" id="Pagina Inicial">Página Inicial</a></li>
+                    <li><a href="../TelaResumoPrompt/resumoPrompt.html" id="criacao">Visão Geral</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <div class="main-content">
+            <div class="content-center">
+                <div class="title-retangulo-wrapper">
+                    <h1 class="title">Prompt Gerado:</h1>
+                    <div class="retangulo">
+                        <button class="copiar" onclick="copiarPrompt()" title="Copiar prompt"></button>
+                        <div id="promptContent" class="prompt-content">
+                            <!-- O conteúdo do prompt será inserido aqui pelo JavaScript -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="texto-acima-retangulos">
+            <p>Cole seu prompt em uma IA generativa e veja a mágica acontecer!</p>
+        </div>
+
+        <div class="retangulos-container">   
+            <div class="bloco">     
+                <div class="retangulo_ref">
+                    <img src="ChatGPT.png" alt="ChatGPT" class="icone">
+                    <a href="https://chat.openai.com" target="_blank">
+                        <h3 class="titulo-retangulo">CHAT GPT</h3>
+                    </a>
+                </div>   
+            </div>    
+
+            <div class="bloco">     
+                <div class="retangulo_ref">
+                    <img src="Gemini Ai.png" alt="Gemini" class="icone">
+                    <a href="https://gemini.google.com" target="_blank">
+                        <h3 class="titulo-retangulo">GEMINI</h3>
+                    </a>
+                </div>   
+            </div>    
+
+            <div class="bloco">     
+                <div class="retangulo_ref">
+                    <img src="Perplexity.png" alt="Perplexity" class="icone">
+                    <a href="https://www.perplexity.ai" target="_blank">
+                        <h3 class="titulo-retangulo">PERPLEXITY</h3>
+                    </a>
+                </div>   
+            </div>    
+
+            <div class="bloco">     
+                <div class="retangulo_ref">
+                    <img src="Claude Ai.png" alt="Claude" class="icone">
+                    <a href="https://claude.ai" target="_blank">
+                        <h3 class="titulo-retangulo">CLAUDE</h3>
+                    </a>
+                </div>   
+            </div>
+        </div>
+
+        <div class="decoracao"></div>
+        <div class="decoracao_2"></div>
+
+        <script src="scriptTela6.js"></script>
+    </body>
+</html>

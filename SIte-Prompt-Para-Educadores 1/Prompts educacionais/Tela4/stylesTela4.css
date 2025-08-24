@@ -1,0 +1,580 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'NewYork';
+    src: url('fontes/NewYork PERSONAL USE.otf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+    background: #FFFFFF;
+    position: relative;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    padding-bottom: 4rem;
+}
+
+.efeitoFundoEsquerda-imagem {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 49vw;
+  height: 100vh;
+  background-image: url('EfeitoFundoEsquerda.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top left;
+  z-index: 0;
+}
+
+.efeitoFundoDireita-imagem {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 49vw;  
+  height: 100vh;
+  background-image: url('EfeitoFundoDireita.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top right;
+  z-index: 0;
+
+}
+
+.container {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    min-height: 100vh;
+    padding: clamp(16px, 4vw, 40px);
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    position: absolute;
+    top: clamp(12px, 2.5vw, 20px);
+    right: clamp(12px, 4vw, 40px);
+    z-index: 10;
+    width: calc(100% - 2 * clamp(12px, 4vw, 40px));
+    display: flex;
+    justify-content: flex-end;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: clamp(12px, 3vw, 30px);
+    flex-wrap: wrap; /* permite quebrar em telas pequenas */
+    align-items: center;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #2E4B91;
+    font-weight: 500;
+    font-size: clamp(0.9rem, 2vw, 1rem);
+}
+
+.nav-links a:hover {
+    color: #FDF0DD;
+}
+
+
+.main-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    text-align: center;
+    padding-top: 0; 
+    min-height: 60vh;
+    margin-top: -8rem;
+    
+}
+
+
+.content-center {
+    width: 100%;
+    max-width: 900px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: clamp(12px, 2.5vw, 20px);
+    margin-top: clamp(0px, 3vw, -100px);
+    transform: none; 
+    padding: 0 1rem;
+}
+
+.title {
+  display: flex;
+  width: 99.4375rem;
+  height: 13.25rem;
+  flex-direction: column;
+  justify-content: center;
+  flex-shrink: 0;
+  color: #000;
+  text-align: center;
+  font-family: NewYork;
+  font-size: 3.875rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 5rem; /* 85.106% */
+  letter-spacing: -0.05875rem;
+}
+
+.subtitle{
+  width: 59.1875rem;
+  color: #000;
+  text-align: center;
+  font-family: Poppins;
+  font-size: -3rem;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: -0.015rem;
+  transform: translateY(-3rem);
+}
+
+
+.cta-button {
+  position: absolute;
+  bottom: 1rem; /* distância do fundo da tela */
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'Poppins', sans-serif;
+  background: #2E4B91;
+  color: #FDF0DD;
+  padding: clamp(8px, 1.8vw, 12px) clamp(16px, 3.5vw, 30px);
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: clamp(0.9rem, 1.8vw, 1rem);
+  transition: background 0.3s ease, transform 0.12s ease;
+  z-index: 999;
+}
+
+
+.cta-button:hover {
+    background: #3c5aa6;
+    transform: translateX(-50%) translateY(-2px);
+}
+
+.retangulos{
+  width: 16.4375rem;
+  height: 10.25rem;
+  flex-shrink: 0;
+  border-radius: 2rem;
+  border: 1px solid #000;
+  background: #FFF;
+  box-shadow: 0 4px 4px 0 rgba(54, 53, 45, 0.50);
+  backdrop-filter: blur(24.5px);
+  align-items: center;
+}
+
+.retangulos-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin: 0 auto;
+  padding: 2rem;
+  max-width: 100%;
+  transform: none;
+}
+
+.bloco {
+  position: relative;
+  flex: 0 0 auto;
+  max-width: 21.4375rem;
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem;
+}
+
+  .bloco:nth-child(4),
+  .bloco:nth-child(5) {
+  margin-top: 5.5rem; /* ou o valor que quiser para afastar mais */
+}
+
+.retangulo {
+  position: relative;
+  overflow: hidden; 
+  width: 100%;
+  padding: 2rem 1.5rem 1.5rem 1.5rem;
+  border-radius: 2rem;
+  border: 1px solid #000;
+  background: #FFF;
+  box-shadow: 0 4px 4px rgba(54, 53, 45, 0.5);
+  backdrop-filter: blur(24.5px);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: center;
+  z-index: 2;
+  flex-shrink: 0;
+  min-height: 10.25rem;
+  max-height: 10.25rem;
+  
+  
+}
+
+.icone {
+  position: absolute;
+  top: -7.3rem;
+  left: 0.5rem;
+  width: 10.25rem;
+  height: 10.5rem;
+  z-index: 1;
+}
+.bloco:nth-child(1) .icone,
+.bloco:nth-child(3) .icone,
+.bloco:nth-child(5) .icone {
+  height: 10rem;
+  object-fit: cover; /* mantém o corte bonito */
+}
+
+.bloco:nth-child(2) .icone {
+  height: 11rem;
+  object-fit: cover;
+}
+
+.bloco:nth-child(4) .icone {
+  height: 9.5rem;
+  object-fit: cover;
+}
+
+.retangulo h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #2E4B91;
+  margin-bottom: 1rem;
+  margin-top: 2rem;
+}
+
+.retangulo p {
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.4;
+  max-height: 6rem;
+  overflow: hidden;
+  font-size: clamp(0.9rem, 1vw, 1rem);
+}
+
+.titulo-retangulo {
+   text-align: center;
+  position: absolute;
+  top: -6rem; 
+  left: 10rem; 
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #2E4B91;
+  z-index: 2;
+  white-space: nowrap;
+  top: -2rem;     /* ⬇️ move o título mais pra baixo */
+  left: 8rem;
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 1.6rem;
+    line-height: 2.2rem;
+    width: 100%;
+    margin-top: 3.5rem; /* ⬇️ afasta do topo/menu */
+    text-align: center;
+  }
+
+ .subtitle {
+  font-size: 0.85rem;
+  width: 90%;
+  transform: translateY(-1rem);
+  letter-spacing: -0.01rem;
+  font-weight: 300;
+  margin: 0 auto;
+  text-align: center;
+}
+
+  .cta-button {
+    position: static;
+    transform: none;
+    margin-top: 2rem;
+  }
+
+  .retangulos-container {
+    flex-direction: column;
+    gap: 1.2rem;
+    padding: 1rem;
+    align-items: center;
+  }
+
+  .bloco {
+    max-width: 100%;
+    margin-top: 2rem;
+  }
+
+  .retangulo {
+    padding: 1.5rem;
+    min-height: auto;
+    max-height: none;
+  }
+
+  .icone {
+    width: 6rem;
+    height: 6rem;
+    top: -4.5rem;
+    left: 0.5rem;
+  }
+
+  .titulo-retangulo {
+    font-size: 1rem;
+    top: -1rem;
+    left: 5.5rem;
+  }
+}
+
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .title {
+    font-size: 2rem;
+    line-height: 2.8rem;
+    width: 100%;
+    margin-top: 4rem; /* ⬇️ afasta do topo/menu */
+    text-align: center;
+  }
+
+  .subtitle {
+  font-size: 1rem;
+  width: 90%;
+  transform: translateY(-1.5rem);
+  letter-spacing: -0.01rem;
+  font-weight: 300;
+  margin: 0 auto;
+  text-align: center;
+}
+
+  .retangulos-container {
+    gap: 1.5rem;
+    padding: 1.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .bloco {
+    max-width: 95%;
+    margin-top: 2.5rem;
+  }
+
+  .retangulo {
+    padding: 1.8rem;
+    min-height: auto;
+    max-height: none;
+  }
+
+  .icone {
+    width: 7.5rem;
+    height: 7.5rem;
+    top: -5.5rem;
+    left: 1rem;
+  }
+
+  .titulo-retangulo {
+    font-size: 1.1rem;
+    top: -1.5rem;
+    left: 6.5rem;
+  }
+}
+
+
+/* 💻 Desktop padrão (769px a 1200px) */
+@media (min-width: 769px) and (max-width: 1200px) {
+  .title {
+    font-size: 3rem;
+    line-height: 4rem;
+    width: 90%;
+  }
+
+ .subtitle {
+  font-size: 1.3rem;
+  width: 80%;
+  transform: translateY(-3.5rem);
+  letter-spacing: -0.01rem;
+  font-weight: 300;
+}
+
+
+  .bloco {
+    max-width: 18rem;
+  }
+
+  .icone {
+    width: 9rem;
+    height: 9rem;
+    top: -6.5rem;
+  }
+
+  .titulo-retangulo {
+    font-size: 1.2rem;
+    top: -2rem;
+    left: 7rem;
+  }
+}
+
+/* 🖥️ Full HD e maiores (acima de 1200px) */
+@media (min-width: 1201px) {
+  .title {
+    font-size: 3.875rem;
+    line-height: 5rem;
+    width: 99.4375rem;
+  }
+
+  .subtitle {
+  font-size: 1.5rem;
+  width: 59.1875rem;
+  transform: translateY(-4rem);
+  letter-spacing: -0.01rem;
+  font-weight: 300;
+}
+
+
+  .bloco {
+    max-width: 21.4375rem;
+  }
+
+  .icone {
+    width: 10.25rem;
+    height: 10.5rem;
+    top: -7.3rem;
+  }
+
+  .titulo-retangulo {
+    font-size: 1.2rem;
+    top: -2rem;
+    left: 8rem;
+  }
+}
+
+/* 🖥️ Telas entre 1200px e 1600px */
+@media (min-width: 1200px) and (max-width: 1600px) {
+  .title {
+    font-size: clamp(2.5rem, 4vw, 3.5rem);
+    line-height: clamp(3rem, 5vw, 4.5rem);
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .bloco {
+    max-width: 19rem;
+  }
+
+  .icone {
+    width: 9.5rem;
+    height: 9.5rem;
+    top: -6.8rem;
+  }
+
+  .titulo-retangulo {
+    font-size: 1.1rem;
+    top: -2rem;
+    left: 7.5rem;
+  }
+
+  .efeitoFundoEsquerda-imagem,
+  .efeitoFundoDireita-imagem {
+    width: 50vw;
+    height: 100dvh;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .container {
+    padding: 2rem 4vw;
+  }
+
+  .cta-button {
+    font-size: clamp(0.9rem, 1.5vw, 1rem);
+    padding: clamp(8px, 1.5vw, 12px) clamp(16px, 3vw, 28px);
+  }
+}
+
+/* 🖥️ Telas muito grandes (acima de 1500px) */
+@media (min-width: 1500px) {
+  .bloco {
+    max-width: 22rem;
+    margin-top: 3rem;
+  }
+
+  .bloco:nth-child(4),
+  .bloco:nth-child(5) {
+    margin-top: 6.5rem; /* aumenta o espaçamento para compensar o tamanho da tela */
+  }
+
+  .icone {
+    width: 11rem;
+    height: 11rem;
+    top: -8rem;
+  }
+
+  .titulo-retangulo {
+    font-size: 1rem;
+    top: -2.2rem;
+    left: 9rem;
+  }
+
+  .retangulos-container {
+    gap: 2.5rem;
+    padding: 3rem;
+    max-width: 1600px;
+    margin: 0 auto;
+  }
+}
+
+/* 💻 Ajuste do terceiro retângulo para telas entre 770px e 1070px */
+@media (min-width: 770px) and (max-width: 1070px) {
+  .bloco:nth-child(3) {
+    max-width: 90%;
+    margin-top: 4rem;
+  }
+
+  .bloco:nth-child(3) .icone {
+    width: 8.5rem;
+    height: 8.5rem;
+    top: -6.5rem;
+    left: 1rem;
+  }
+
+  .bloco:nth-child(3) .titulo-retangulo {
+    font-size: 1.1rem;
+    top: -1.8rem;
+    left: 7rem;
+  }
+
+  .bloco:nth-child(3) .retangulo {
+    padding: 2rem 1.2rem;
+    min-height: 10rem;
+    max-height: 10rem;
+    font-size: clamp(0.9rem, 1.2vw, 1rem);
+  }
+}
+
+/* 🖥️ Subtítulo suave e responsivo entre 1200px e 1600px */
+@media (min-width: 1200px) and (max-width: 1600px) {
+  .subtitle {
+    font-size:clamp(calc(0.5rem * 0.8), calc(1.8vw * 0.8), calc(1.7rem * 0.8));
+    width: min(88%, 55rem);
+    margin: 0 auto;
+    transform: translateY(-3.5rem); /* ⬇️ mais abaixo */
+    font-weight: 300;
+    letter-spacing: -0.015rem;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    color: #000;
+  }
+}
+

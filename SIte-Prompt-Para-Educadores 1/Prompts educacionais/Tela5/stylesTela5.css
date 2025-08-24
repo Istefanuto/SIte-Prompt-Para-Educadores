@@ -1,0 +1,396 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'NewYork';
+    src: url('fontes/NewYork PERSONAL USE.otf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+    background: #FFFFFF;
+    position: relative;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    padding-bottom: 4rem;
+}
+
+.gif-decorativo {
+    animation: flutuar 4s ease-in-out infinite;
+    transition: all 0.3s ease;
+    pointer-events: none;
+    background-image: url('robo_piscando_movimento.gif');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    top: -13rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(32rem, 40vw);
+    height: min(18rem, 20vw);
+    z-index: 10;
+}
+
+.efeitoFundoEsquerda-imagem {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 49vw;
+  height: 110vh;
+  background-image: url('EfeitoFundoEsquerda.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top left;
+  z-index: 0;
+}
+
+
+.efeitoFundoDireita-imagem {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 49vw;  
+  height: 110vh;
+  background-image: url('EfeitoFundoDireita.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top right;
+  z-index: 0;
+}
+
+.decoracaoRoboProfessora-imagem {
+    animation: flutuar 4s ease-in-out infinite;
+    transition: all 0.3s ease;
+    pointer-events: none;
+    background-image : url('imgRoboProfessora.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    position: absolute;
+    bottom: 0%;
+    right: -2%;
+    width: min(70rem, 70vw);
+    height: min(25rem, 25vw);
+    z-index: 3;
+}
+.container {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    min-height: 100vh;
+    padding: clamp(16px, 4vw, 40px);
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    position: absolute;
+    top: clamp(12px, 2.5vw, 20px);
+    right: clamp(12px, 4vw, 40px);
+    z-index: 10;
+    width: calc(100% - 2 * clamp(12px, 4vw, 40px));
+    display: flex;
+    justify-content: flex-end;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: clamp(12px, 3vw, 30px);
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #2E4B91;
+    font-weight: 500;
+    font-size: clamp(0.9rem, 2vw, 1rem);
+}
+
+.nav-links a:hover {
+    color: #FDF0DD;
+}
+
+.main-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    text-align: center;
+    padding-top: 0; 
+    min-height: 60vh;
+    margin-top: -8rem;
+}
+
+.content-center {
+    width: 100%;
+    max-width: 900px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: clamp(12px, 2.5vw, 20px);
+    margin-top: clamp(0px, 3vw, -100px);
+    transform: none; 
+    padding: 0 1rem;
+}
+
+.title {
+    display: flex;
+    width: 100%;
+    max-width: 60rem;
+    height: auto;
+    flex-direction: column;
+    justify-content: center;
+    flex-shrink: 0;
+    color: #000;
+    text-align: center;
+    font-family: NewYork, serif;
+    font-size: clamp(2.5rem, 5vw, 3.875rem);
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.2;
+    letter-spacing: -0.05875rem;
+    margin-bottom: 2rem;
+    transform: translateY(-2rem);
+}
+
+.cta-button {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: 'Poppins', sans-serif;
+    background: #2E4B91;
+    color: #FDF0DD;
+    padding: clamp(12px, 2vw, 16px) clamp(24px, 4vw, 32px);
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: clamp(0.9rem, 1.8vw, 1.1rem);
+    transition: background 0.3s ease, transform 0.12s ease;
+    z-index: 999;
+    border: none;
+    cursor: pointer;
+}
+
+.cta-button:hover {
+    background: #3c5aa6;
+    transform: translateX(-50%) translateY(-2px);
+}
+
+.retangulo {
+    position:relative;
+    width: 100%;
+    max-width: 60rem;
+    min-height: 32rem;
+    border-radius: 1.875rem;
+    border: 4px solid #000;
+    background: #FFF;
+    box-shadow: 0 12px 51.2px rgba(45, 55, 59, 0.26);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin: -2rem auto 4rem auto;
+    padding: 3rem;
+}
+
+/* Formulário principal */
+.formulario-instrucoes {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/* Seções do formulário */
+.form-section {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    width: 100%;
+}
+
+.form-section h3 {
+    font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+    font-weight: 600;
+    color: #2E4B91;
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+/* Textareas ocupando quase toda a largura do retângulo */
+.form-section textarea {
+    width: 100%;
+    height: 4.5rem;
+    padding: 1rem 1.2rem;
+    font-family: 'Poppins', sans-serif;
+    font-size: clamp(0.85rem, 1.8vw, 0.95rem);
+    color: #000;
+    background-color: rgba(253, 240, 221, 0.30);
+    border: 3px solid #000;
+    border-radius: 1rem;
+    backdrop-filter: blur(49px);
+    -webkit-backdrop-filter: blur(49px);
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    resize: vertical;
+    min-height: 4.5rem;
+}
+
+.form-section textarea:focus {
+    outline: none;
+    border-color: #2E4B91;
+    box-shadow: 0 0 0 3px rgba(46, 75, 145, 0.2);
+}
+
+.form-section textarea::placeholder {
+    color: #666;
+    font-style: italic;
+    font-size: clamp(0.8rem, 1.6vw, 0.9rem);
+    line-height: 1.4;
+}
+
+/* Botão de envio */
+button[type="submit"] {
+    align-self: center;
+    padding: clamp(12px, 2vw, 16px) clamp(24px, 4vw, 32px);
+    font-family: 'Poppins', sans-serif;
+    background: #2E4B91;
+    color: #FDF0DD;
+    border-radius: 8px;
+    border: none;
+    font-weight: 600;
+    font-size: clamp(0.9rem, 1.8vw, 1.1rem);
+    transition: background 0.3s ease, transform 0.12s ease;
+    cursor: pointer;
+    margin-top: 1rem;
+}
+
+button[type="submit"]:hover {
+    background-color: #3c5aa6;
+    transform: translateY(-2px);
+}
+
+@media (max-width: 480px) {
+  .gif-decorativo {
+    top: 2rem;
+    width: 90vw;
+    height: auto;
+  }
+
+  .decoracaoRoboProfessora-imagem {
+    right: 0;
+    width: 100vw;
+    height: auto;
+  }
+
+  .retangulo {
+    padding: 2rem 1rem;
+    min-height: auto;
+  }
+
+  .cta-button {
+    bottom: 1rem;
+    padding: 0.75rem 1.5rem;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  .main-content {
+    margin-top: -4rem;
+  }
+}
+
+/* 📱 Telas pequenas (até 768px - tablets em modo retrato) */
+@media (max-width: 768px) {
+  .gif-decorativo {
+    width: 80vw;
+    height: auto;
+  }
+
+  .decoracaoRoboProfessora-imagem {
+    width: 90vw;
+    height: auto;
+    right: 0;
+  }
+
+  .retangulo {
+    padding: 2rem;
+  }
+
+  .nav-links {
+    justify-content: center;
+  }
+
+  .title {
+    font-size: clamp(2rem, 6vw, 3rem);
+  }
+}
+
+/* 💻 Telas médias (até 1024px - tablets em modo paisagem e notebooks pequenos) */
+@media (max-width: 1024px) {
+  .gif-decorativo {
+    width: 60vw;
+    height: auto;
+  }
+
+  .decoracaoRoboProfessora-imagem {
+    width: 60vw;
+    height: auto;
+  }
+
+  .retangulo {
+    padding: 2.5rem;
+  }
+
+  .title {
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+  }
+}
+
+/* 🖥️ Telas grandes (Full HD e acima) */
+@media (min-width: 1920px) {
+  .container {
+    max-width: 1600px;
+    margin: 0 auto;
+  }
+
+  .gif-decorativo {
+    width: 32rem;
+    height: 18rem;
+  }
+
+  .decoracaoRoboProfessora-imagem {
+    width: 70rem;
+    height: 25rem;
+  }
+
+  .retangulo {
+    max-width: 70rem;
+    padding: 4rem;
+  }
+
+  .title {
+    font-size: 4rem;
+  }
+}
+
+@media (max-width: 1300px) {
+  .retangulo .gif-decorativo {
+    top: -10rem; /* ainda acima do retângulo, mas menos agressivo */
+    width: clamp(16rem, 45vw, 26rem);
+    max-height: 55vh;
+  }
+}
